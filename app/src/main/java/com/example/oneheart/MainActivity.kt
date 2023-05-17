@@ -10,6 +10,7 @@ import com.example.oneheart.databinding.ActivityMainBinding
 import com.example.oneheart.screens.DonateNavFragment
 import com.example.oneheart.screens.HomeNavFragment
 import com.example.oneheart.screens.NgoNavFragment
+import com.example.oneheart.screens.PostActivity
 import com.example.oneheart.screens.ProfileNavFragment
 
 class MainActivity : AppCompatActivity() {
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+        }
+
+        binding.floatingPost.setOnClickListener {
+            intent = android.content.Intent(this, PostActivity::class.java)
         }
     }
 

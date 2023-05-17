@@ -93,24 +93,31 @@
             <LinearLayout
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal" >
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/like"
+                    android:scaleType="centerInside"
+                    android:textAlignment="textEnd"
+                    android:backgroundTint="@color/white"
+                    android:src="@drawable/ic_dislike"
                     android:layout_weight="1"/>
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/comment"
                     android:layout_weight="1"/>
 
                 <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:backgroundTint="@color/white"
                     android:src="@drawable/send"
                     android:layout_weight="1"/>
 
