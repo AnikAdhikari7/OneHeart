@@ -1,4 +1,4 @@
-package com.example.auth
+package com.example.oneheart.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +14,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun createAnAccOnClick(view: View) {
-        startActivity(Intent(this@LoginActivity,SignUpActivity::class.java))
+        startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
         finish()
     }
 

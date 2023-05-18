@@ -1,4 +1,4 @@
-package com.example.auth
+package com.example.oneheart.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +13,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     fun alreadyHaveAccOnClick(view: View) {
-        startActivity(Intent(this@SignUpActivity,LoginActivity::class.java))
+        startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
         finish()
     }
 }

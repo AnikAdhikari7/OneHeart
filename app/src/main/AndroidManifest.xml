@@ -13,10 +13,10 @@
         android:theme="@style/Theme.OneHeart"
         tools:targetApi="31">
         <activity
-            android:name="com.example.auth.SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.auth.LoginActivity"
+            android:name=".auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
