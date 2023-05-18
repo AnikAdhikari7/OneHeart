@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +21,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/donation"
+            android:src="@drawable/logo_oneheart"
             tools:ignore="ContentDescription" />
 
         <View
@@ -36,7 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/lightBlue"
             android:fontFamily="@font/poppins_semibold"
             android:padding="5dp"
             android:text="@string/signin"
@@ -59,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
+            app:boxStrokeColor="@color/lightGreen"
             android:layout_marginEnd="24dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -78,6 +79,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/lightGreen"
             android:layout_marginEnd="24dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -101,16 +103,24 @@
             android:text="Log In"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:backgroundTint="#4356b8"
+            app:backgroundTint="@color/lightGreen"
             app:rippleColor="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="24dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Forgot Password ?" />
+
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightGreen"
+            android:layout_margin="24dp" />
 
         <View
             android:layout_width="match_parent"
@@ -122,15 +132,30 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Login as NGO"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:backgroundTint="#777C97"
+            app:backgroundTint="@color/lightBlue"
             app:rippleColor="#FFFFFF" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
+
 </ScrollView>

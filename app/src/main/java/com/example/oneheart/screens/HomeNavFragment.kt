@@ -1,12 +1,20 @@
 package com.example.oneheart.screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oneheart.R
+import com.example.oneheart.daos.PostDao
+import com.example.oneheart.models.Post
+import com.example.socialapp.PostAdapter
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.core.Query
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +34,9 @@ class HomeNavFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
 //    lateinit var myAdapter: HomeScreenAdapter
 
+    private lateinit var postDao: PostDao
+    private lateinit var adapter: PostAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,7 +44,41 @@ class HomeNavFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
+        val postButton = view?.findViewById<Button>(R.id.btnPost)!!
 
+        .setOnClickListener{
+            val intent = Intent(activity, PostActivity::class.java)
+            startActivity(intent)
+        }
+
+        setUpRecyclerView()
+
+    }
+
+    private fun setUpRecyclerView() {
+        postDao = PostDao()
+        val postsCollections = postDao.postCollections
+        val query = postsCollections.orderBy("createdAt", Query.Direction.DESCENDING)
+        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post::class.java).build()
+
+        adapter = PostAdapter(recyclerViewOptions, activity)
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        adapter.stopListening()
+    }
+
+    override fun onLikeClicked(postId: String) {
+        postDao.updateLikes(postId)
     }
 
     override fun onCreateView(
