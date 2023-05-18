@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">OneHeart</string>
+    <string name="home">Home</string>
+    <string name="donate">Donate</string>
+    <string name="ngo">NGO</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signin"><u>Sign In</u></string>
+    <string name="signup_to_continue"><u>SignUp to continue</u></string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
