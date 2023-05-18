@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.oneheart.MainActivity
 import com.example.oneheart.R
+import com.example.oneheart.auth.SignUpActivity
 import com.example.oneheart.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 

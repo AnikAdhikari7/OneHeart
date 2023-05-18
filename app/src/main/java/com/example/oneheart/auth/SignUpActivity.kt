@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.auth.LoginActivity
 import com.example.oneheart.MainActivity
 import com.example.oneheart.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
