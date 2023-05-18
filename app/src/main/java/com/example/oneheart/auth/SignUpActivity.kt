@@ -11,8 +11,11 @@ import android.view.View
 import android.widget.Toast
 import com.example.auth.LoginActivity
 import com.example.oneheart.MainActivity
+import com.example.oneheart.daos.UserDao
 import com.example.oneheart.databinding.ActivitySignUpBinding
+import com.example.oneheart.models.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.Exception
@@ -21,10 +24,12 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
     private var progressDialog: ProgressDialog? = null
+    lateinit var firebaseUser:FirebaseUser
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
 
         progressDialog = ProgressDialog(this)
         progressDialog!!.setTitle("Loading")
@@ -41,6 +46,11 @@ class SignUpActivity : AppCompatActivity() {
                     service.execute {
                         try {
                             createUser(binding.signUpEmail.text.toString().trim(),binding.signUpPassword.text.toString())
+                            val user = User(firebaseUser.uid,binding.signUpFullName.text.toString(),binding.signUpEmail.text.toString(),"","",
+                                ArrayList(),ArrayList(),binding.signUpPassword.text.toString()
+                            )
+                            val userDao = UserDao()
+                            userDao.addUser(user = user)
                             i = true
                         }catch (e: Exception){
                             Log.d("SignUp","Unable to create user")
@@ -99,6 +109,7 @@ class SignUpActivity : AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    firebaseUser = firebaseAuth.currentUser!!
                     firebaseAuth.currentUser?.sendEmailVerification()
                         ?.addOnCompleteListener(this) { task1 ->
                             if (task1.isSuccessful) {
