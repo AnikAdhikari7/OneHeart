@@ -26,7 +26,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="false" />
+
+        <activity android:name=".screens.PostActivity"
+            android:exported="false"/>
 
         <meta-data
             android:name="preloaded_fonts"

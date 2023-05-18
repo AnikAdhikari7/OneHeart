@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
             toggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
+
             drawerLayout.addDrawerListener(toggle)
             toggle.syncState()
 
