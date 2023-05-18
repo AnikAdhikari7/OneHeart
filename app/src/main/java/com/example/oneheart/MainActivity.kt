@@ -1,5 +1,7 @@
 package com.example.oneheart
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -12,15 +14,20 @@ import com.example.oneheart.screens.HomeNavFragment
 import com.example.oneheart.screens.NgoNavFragment
 import com.example.oneheart.screens.PostActivity
 import com.example.oneheart.screens.ProfileNavFragment
+import java.util.Objects
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var toggle: ActionBarDrawerToggle
+    @SuppressLint("AppCompatMethod")
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.homeScreenToolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         actionBar?.show()
 
@@ -63,7 +70,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.floatingPost.setOnClickListener {
-            intent = android.content.Intent(this, PostActivity::class.java)
+            intent = Intent(this@MainActivity, PostActivity::class.java)
+            startActivity(intent)
         }
     }
 

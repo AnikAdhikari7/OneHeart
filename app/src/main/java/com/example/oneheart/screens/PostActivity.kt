@@ -7,11 +7,14 @@ import com.example.oneheart.databinding.ActivityPostBinding
 
 class PostActivity : AppCompatActivity() {
 
-    private var binding = ActivityPostBinding.inflate(layoutInflater)
+    private lateinit var binding: ActivityPostBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPostBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+
     }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "476005727049",
+    "project_id": "oneheart-51c04",
+    "storage_bucket": "oneheart-51c04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476005727049:android:c350577013cb30a7e87898",
+        "android_client_info": {
+          "package_name": "com.example.oneheart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476005727049-28blkjrvo8ch6aph7ttnsm2mj1u4ur1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHSelFGFY-wbWHYZFjKbZtwGRZC2-wgP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476005727049-28blkjrvo8ch6aph7ttnsm2mj1u4ur1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
