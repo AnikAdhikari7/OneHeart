@@ -17,7 +17,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".auth.LoginActivity"
+            android:name="com.example.auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
         </activity>
 
         <activity
-            android:name=".ValuesActivity"
+            android:name=".screens.ValuesActivity"
             android:exported="false" />
 
         <activity

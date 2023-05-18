@@ -1,5 +1,6 @@
 package com.example.oneheart.daos
 
+import android.annotation.SuppressLint
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
@@ -12,11 +13,12 @@ class UserDao {
     val db = FirebaseFirestore.getInstance()
     val userCollection = db.collection("users")
 
-//    fun addUser(user: User?) {
-//        user?.let {
-//            GlobalScope.launch(Dispatchers.IO) {
-//                userCollection.document(user.uid).set(it)
-//            }
-//        }
-//    }
+    @SuppressLint("RestrictedApi")
+    fun addUser(user: com.example.oneheart.models.User) {
+        user.let {
+            GlobalScope.launch(Dispatchers.IO) {
+                userCollection.document(user.uId).set(it)
+            }
+        }
+    }
 }
