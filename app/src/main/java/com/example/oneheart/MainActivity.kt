@@ -69,10 +69,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.floatingPost.setOnClickListener {
-            intent = Intent(this@MainActivity, PostActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun changeFragment(fragment: Fragment) {

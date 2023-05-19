@@ -1,6 +1,8 @@
 package com.example.oneheart.screens
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.IpConfiguration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,9 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.oneheart.R
 import com.example.oneheart.daos.PostDao
 import com.example.oneheart.models.Post
+import com.example.socialapp.IPostAdapter
 import com.example.socialapp.PostAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.google.firebase.firestore.core.Query
+import com.google.firebase.firestore.Query
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +29,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeNavFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeNavFragment : Fragment() {
+class HomeNavFragment : Fragment(), IPostAdapter {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -44,42 +47,8 @@ class HomeNavFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        val postButton = view?.findViewById<Button>(R.id.btnPost)!!
-
-        .setOnClickListener{
-            val intent = Intent(activity, PostActivity::class.java)
-            startActivity(intent)
-        }
-
-        setUpRecyclerView()
-
     }
-
-    private fun setUpRecyclerView() {
-        postDao = PostDao()
-        val postsCollections = postDao.postCollections
-        val query = postsCollections.orderBy("createdAt", Query.Direction.DESCENDING)
-        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post::class.java).build()
-
-        adapter = PostAdapter(recyclerViewOptions, activity)
-
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        adapter.startListening()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        adapter.stopListening()
-    }
-
-    override fun onLikeClicked(postId: String) {
-        postDao.updateLikes(postId)
-    }
+    
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -107,5 +76,49 @@ class HomeNavFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    @SuppressLint("SuspiciousIndentation")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val postButton = view.findViewById<Button>(R.id.btnPost)
+
+            postButton.setOnClickListener{
+                val intent = Intent(activity, PostActivity::class.java)
+                startActivity(intent)
+            }
+
+        setUpRecyclerView()
+        recyclerView = requireView().findViewById(R.id.recyclerview)!!
+        postDao = PostDao()
+        val postsCollections = postDao.postCollections
+        val query = postsCollections.orderBy("createdAt", Query.Direction.DESCENDING)
+        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post::class.java).build()
+
+        adapter = PostAdapter(recyclerViewOptions, activity as IPostAdapter)
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+
+    }
+
+    private fun setUpRecyclerView() {
+        
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        adapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        adapter.stopListening()
+    }
+
+    override fun onLikeClicked(postId: String) {
+        postDao.updateLikes(postId)
     }
 }

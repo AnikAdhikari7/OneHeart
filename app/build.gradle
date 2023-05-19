@@ -46,6 +46,7 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.6.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.2.0'
+    implementation 'androidx.compose.foundation:foundation-layout:1.1.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -81,6 +82,9 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
     // FirebaseUI for Cloud Storage
     implementation 'com.firebaseui:firebase-ui-storage:8.0.2'
+
+
+    implementation 'com.google.firebase:firebase-firestore:24.6.0'
 
 
 

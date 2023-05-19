@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.example.oneheart.daos.UserDao
 import com.example.oneheart.models.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -55,9 +56,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        binding.loginBtn.setOnClickListener {
-//            signInUser(binding.loginEmail.text.toString(), binding.loginPassword.text.toString())
-//        }
+        binding.loginBtn.setOnClickListener {
+            signInUser(binding.loginEmail.text.toString(), binding.loginPassword.text.toString())
+        }
 
 
         // Configure Google Sign In
@@ -141,40 +142,40 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-//    /// rest -------------
-//
-//    fun createAnAccOnClick(view: View) {
-//        startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
-//        finish()
-//    }
-//
-//    private fun signInUser(email: String, password: String) {
-//
-//        progressDialog = ProgressDialog(this)
-//        progressDialog!!.setTitle("Loading")
-//        progressDialog!!.setMessage("Please Wait...")
-//
-//        progressDialog!!.show()
-//        val firebaseAuth = FirebaseAuth.getInstance()
-//        firebaseAuth.signInWithEmailAndPassword(email, password)
-//            .addOnCompleteListener(this) { task ->
-//                if (task.isSuccessful) {
-//                    val user = firebaseAuth.currentUser
-//                    progressDialog!!.dismiss()
-//                    startActivity(
-//                        Intent(this, MainActivity::class.java)
-//                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//                    )
-//                    finish()
-//                } else {
-//                    Log.d("signUp", task.exception.toString())
-//                    Toast.makeText(
-//                        this@LoginActivity,
-//                        task.exception.toString(),
-//                        Toast.LENGTH_LONG
-//                    ).show()
-//                }
-//            }
-//    }
+    /// rest -------------
+
+    fun createAnAccOnClick(view: View) {
+        startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
+        finish()
+    }
+
+    private fun signInUser(email: String, password: String) {
+
+        progressDialog = ProgressDialog(this)
+        progressDialog!!.setTitle("Loading")
+        progressDialog!!.setMessage("Please Wait...")
+
+        progressDialog!!.show()
+        val firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = firebaseAuth.currentUser
+                    progressDialog!!.dismiss()
+                    startActivity(
+                        Intent(this, MainActivity::class.java)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    )
+                    finish()
+                } else {
+                    Log.d("signUp", task.exception.toString())
+                    Toast.makeText(
+                        this@LoginActivity,
+                        task.exception.toString(),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+    }
 
 }
