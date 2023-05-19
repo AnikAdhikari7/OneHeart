@@ -39,7 +39,7 @@
                         android:layout_marginTop="3dp"
                         android:layout_marginEnd="15dp"
                         android:elevation="10dp"
-                        android:src="@drawable/logo_oneheart" />
+                        android:src="@drawable/profile_icon" />
 
                     <TextView
                         android:id="@+id/donateHistoryProfileName"
@@ -110,16 +110,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:paddingStart="20dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="15dp"
                     android:paddingEnd="20dp"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="15dp">
 
                     <ImageView
                         android:id="@+id/ValueImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/logo_oneheart" />
+                        android:src="@drawable/value" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -156,16 +156,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:paddingStart="20dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="15dp"
                     android:paddingEnd="20dp"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="15dp">
 
                     <ImageView
                         android:id="@+id/FoodImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/logo_oneheart" />
+                        android:src="@drawable/food" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -202,16 +202,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
                     android:paddingStart="20dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="15dp"
                     android:paddingEnd="20dp"
-                    android:paddingBottom="10dp">
+                    android:paddingBottom="15dp">
 
                     <ImageView
                         android:id="@+id/ResourcesImageView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/logo_oneheart" />
+                        android:src="@drawable/resources" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -259,7 +259,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/logo_oneheart" />
+                        android:src="@drawable/volunteering" />
 
                     <TextView
                         android:layout_width="wrap_content"
