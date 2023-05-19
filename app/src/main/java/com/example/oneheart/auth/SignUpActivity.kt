@@ -97,6 +97,9 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnSignUpAsNGO.setOnClickListener {
+            Toast.makeText(this, "Yet to implement", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun alreadyHaveAccOnClick(view: View) {

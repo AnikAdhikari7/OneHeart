@@ -59,10 +59,11 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="339dp"
+            android:layout_width="match_parent"
             android:layout_height="161dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
             android:autoSizeTextType="uniform"
             android:autoSizeMaxTextSize="25dp"
             android:autoSizeMinTextSize="20dp"
@@ -74,7 +75,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="412dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"

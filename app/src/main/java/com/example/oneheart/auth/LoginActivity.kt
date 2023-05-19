@@ -18,13 +18,30 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private var progressDialog: ProgressDialog? = null
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val email = binding.loginEmail.text.toString()
+        val password = binding.loginPassword.text.toString()
+
         binding.loginBtn.setOnClickListener {
+//            if (email.isEmpty()) {
+//                binding.loginEmail.error = "This field can't be empty!"
+//            } else if (password.isEmpty()) {
+//                binding.loginPassword.error = "This field can't be empty!"
+//            } else {
+//                signInUser(binding.loginEmail.text.toString(), binding.loginPassword.text.toString())
+//            }
+
             signInUser(binding.loginEmail.text.toString(), binding.loginPassword.text.toString())
+
+        }
+
+        binding.btnLoginAsNGO.setOnClickListener {
+            Toast.makeText(this, "Yet to implement", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -33,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
+
     private fun signInUser(email: String, password: String) {
 
         progressDialog = ProgressDialog(this)
@@ -40,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
         progressDialog!!.setMessage("Please Wait...")
 
         progressDialog!!.show()
-        val firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -52,6 +70,7 @@ class LoginActivity : AppCompatActivity() {
                     )
                     finish()
                 } else {
+                    progressDialog!!.dismiss()
                     Log.d("signUp", task.exception.toString())
                     Toast.makeText(
                         this@LoginActivity,
@@ -59,7 +78,18 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
-            }
+            } .addOnCanceledListener {
+            Toast.makeText(this, "Failed! Please try again.", Toast.LENGTH_SHORT).show()
+        }
     }
 
+//    override fun onStart() {
+//        super.onStart()
+//
+//        if (firebaseAuth.currentUser != null) {
+//            intent = Intent(this@LoginActivity, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
+//    }
 }
