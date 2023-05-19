@@ -21,7 +21,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/donation"
+        android:src="@drawable/logo_oneheart"
         tools:ignore="ContentDescription" />
     <View
         android:layout_width="match_parent"
@@ -33,8 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="0dp"
+        android:textColor="@color/lightBlue"
         android:padding="5dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="monospace"
         android:text="@string/signup_to_continue"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -44,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="alreadyHaveAccOnClick"
+        android:layout_marginTop="10dp"
         android:layout_gravity="end"
         android:fontFamily="@font/poppins_semibold"
         android:layout_marginEnd="24dp"
@@ -53,6 +55,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/lightGreen"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp">
@@ -72,6 +75,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/lightGreen"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp">
@@ -91,6 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        app:boxStrokeColor="@color/lightGreen"
         app:passwordToggleEnabled="true"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp">
@@ -110,6 +115,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:passwordToggleEnabled="true"
+        app:boxStrokeColor="@color/lightGreen"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp">
@@ -135,7 +141,7 @@
         android:textSize="18sp"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
-        app:backgroundTint="#4356b8"
+        app:backgroundTint="@color/lightGreen"
         app:rippleColor="#FFFFFF" />
 
     <View
@@ -145,16 +151,17 @@
         android:layout_height="1dp"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignUpAsNGO"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="@font/poppins_semibold"
         android:textSize="18sp"
         android:text="SignUp as NGO"
         android:textColor="#FFFFFF"
-        app:backgroundTint="#777C97"
+        app:backgroundTint="@color/lightBlue"
         app:rippleColor="#FFFFFF" />
 
     </LinearLayout>

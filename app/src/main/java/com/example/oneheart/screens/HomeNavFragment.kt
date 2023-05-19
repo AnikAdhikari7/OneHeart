@@ -1,5 +1,6 @@
 package com.example.oneheart.screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,6 +34,10 @@ class HomeNavFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
+        view?.findViewById<View>(R.id.floatingPost)?.setOnClickListener {
+            val intent = Intent(activity, PostActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

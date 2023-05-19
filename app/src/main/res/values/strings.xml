@@ -8,8 +8,8 @@
     <string name="Post"><br><u>Post</u></br></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="signin"><u>Sign In</u></string>
-    <string name="signup_to_continue"><u>SignUp to continue</u></string>
+    <string name="signin">Sign In</string>
+    <string name="signup_to_continue">SignUp to continue</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
 </resources>

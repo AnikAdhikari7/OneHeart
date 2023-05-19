@@ -22,7 +22,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/donation"
+            android:src="@drawable/logo_oneheart"
             tools:ignore="ContentDescription" />
 
         <View
@@ -37,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="0dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="monospace"
+            android:textColor="@color/lightBlue"
             android:padding="5dp"
             android:text="@string/signin"
             android:textSize="24sp"
@@ -48,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:onClick="createAnAccOnClick"
@@ -57,6 +59,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/lightGreen"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp">
@@ -77,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
+            app:boxStrokeColor="@color/lightGreen"
             app:passwordToggleEnabled="true"
             android:layout_marginEnd="24dp">
 
@@ -101,7 +105,7 @@
             android:text="Log In"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:backgroundTint="#4356b8"
+            app:backgroundTint="@color/lightGreen"
             app:rippleColor="#FFFFFF" />
 
         <TextView
@@ -120,16 +124,17 @@
             android:background="#57000000" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoginAsNGO"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Login as NGO"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:backgroundTint="#777C97"
+            app:backgroundTint="@color/lightBlue"
             app:rippleColor="#FFFFFF" />
 
     </LinearLayout>
