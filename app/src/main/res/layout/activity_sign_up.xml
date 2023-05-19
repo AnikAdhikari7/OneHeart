@@ -61,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
+            android:id="@+id/signUpFullName"
             android:inputType="textCapSentences"
             android:textColorHint="#999999" />
 
@@ -79,6 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:id="@+id/signUpEmail"
             android:inputType="textEmailAddress"
             android:textColorHint="#999999" />
 
@@ -96,6 +98,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/signUpPassword"
             android:hint="Password"
             android:inputType="textPassword"
             android:textColorHint="#999999" />
@@ -114,6 +117,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/signUpConfirmPassword"
             android:hint="Confirm password"
             android:inputType="textPassword"
             android:textColorHint="#999999" />
@@ -126,6 +130,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:id="@+id/signUpBtn"
         android:fontFamily="@font/poppins_semibold"
         android:textSize="18sp"
         android:text="Sign Up"

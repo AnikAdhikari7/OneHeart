@@ -13,8 +13,9 @@
         android:theme="@style/Theme.OneHeart"
         tools:targetApi="31">
         <activity
-            android:name="com.example.auth.SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="false" />
+
         <activity
             android:name="com.example.auth.LoginActivity"
             android:exported="true">
@@ -24,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".screens.ValuesActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
